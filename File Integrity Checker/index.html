@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Integrity Checker and Hash Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<video style="display: none;" id="resultVideoYa">
+    <source src="ya.mp4" type="video/mp4">
+</video>
+<video style="display: none" id="resultVideoNo">
+    <source src="no.mp4" type="video/mp4">
+</video>
+<div class="container">
+    <h1>File Integrity Checker and Hash Calculator</h1>
+    <div class="columns">
+        <div class="column">
+            <h2>Calculate Hashes</h2>
+            <input type="file" id="fileInput"/>
+            <button onclick="calculateHash()">Calculate Hash</button>
+
+            <div id="results">
+                <h3>Calculated Hashes:</h3>
+                <p><strong>MD5:</strong> <span id="md5"></span></p>
+                <p><strong>SHA-1:</strong> <span id="sha1"></span></p>
+                <p><strong>SHA-256:</strong> <span id="sha256"></span></p>
+            </div>
+        </div>
+        <div class="column">
+            <h2>Check File Integrity</h2>
+            <label for="knownHash" style="font-size: 14px;">Known Hash (MD5 / SHA1 / SHA256) :</label>
+            <input style="margin-top: 12px;" type="text" id="knownHash" placeholder="Enter known hash"/>
+            <button onclick="checkIntegrity()">Check Integrity</button>
+
+            <div id="integrity-results">
+                <h3>Integrity Check Results:</h3>
+                <div style="margin-top: 6px; display: grid; grid-auto-flow: column; float: left; align-items: center">
+                    <img id="integrityImg" width="64px" src="imgs/question.svg" alt="green_tick">
+                    <p id="integrityHash" style="margin-left: 16px;">Enter a known hash to check integrity.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container" style="margin-top: 20px;">
+    <p><b>Note :</b> No file is sent on the network.<br>The magic happens in your browser! :) </p>
+    <p>Repository on GitHub <a href="https://github.com/smitverma/file-integrity-checker">here.</a></p>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

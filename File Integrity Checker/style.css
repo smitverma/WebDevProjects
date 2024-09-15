@@ -1,0 +1,92 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    text-align: center;
+    padding: 40px;
+}
+
+.container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: auto;
+}
+
+h1 {
+    margin-bottom: 30px;
+}
+
+#resultVideoYa, #resultVideoNo {
+    display: none; /* Initially invisible and takes no space */
+    position: fixed; /* Fixed positioning */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Offset by half the width and height */
+    /*z-index: 1000; !* Ensure it is above other elements *!*/
+    background: white; /* Optional: Add a background color */
+    /*padding: 20px; !* Optional: Add padding for aesthetic purposes *!*/
+}
+.columns {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.column {
+    flex: 0 0 40%;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+input[type="file"], input[type="text"] {
+    margin-bottom: 20px;
+    padding: 10px;
+    width: calc(100% - 40px);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#results, #integrity-results {
+    margin-top: 20px;
+    text-align: left;
+}
+
+#results h3, #integrity-results h3 {
+    margin-bottom: 10px;
+}
+
+#results p, #integrity-results p {
+    margin: 5px 0;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+.shake {
+    animation: shake 0.2s;
+}
